@@ -1,3 +1,3 @@
 # Python_Elias
-This is th erepository for Python 
+This is the erepository for Python 
 
