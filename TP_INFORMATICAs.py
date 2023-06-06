@@ -88,8 +88,8 @@ def agregarRegistros(M,C):                                            # Agrega r
     return datos
 
 matriz,columnas = cargarArchivo()
-agregarRegistros(matriz,columnas)
-#mostrarMatriz(matriz)
+#agregarRegistros(matriz,columnas)
+mostrarMatriz(matriz)
 
 
 #-------------------------------Programa principal-------------------------------#
