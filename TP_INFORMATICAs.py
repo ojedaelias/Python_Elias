@@ -60,7 +60,14 @@ def su subMenu():
     return x
 
 
-
+#--------------Validacion que este cargada la matriz antes de trabajarla----------------#
+def validacion(x):
+    while x == []:
+            print('Debes cargar los datos antes de trabajar con ellos')
+            Menu = Menu()
+            if Menu == 1:
+                x = cargarArchivo()
+    return x
 
 #-----------Agregar datos-----------#
 def agregarRegistros(M,C):                                            # Agrega registros a la amtriz "M"
@@ -84,21 +91,29 @@ agregarRegistros(matriz,columnas)
 
 
 #-------------------------------Programa principal-------------------------------#
-print('este es el menu')
-print('Git hub es una verga una recontra verga')
-while Menu() != 5: 
-    if Menu() == 1:
+Menu = Menu()
+while Menu != 1 and Menu != 2 and Menu != 3 and Menu != 4 and Menu != 5:
+    print('El numero ingresado no corresponde a ninguna de las opciones')
+    Menu = Menu()
+while Menu != 5: 
+    if Menu == 1:
         cargarArchivo()
-    elif Menu() == 2:
-        if datosArchivos == []:
-            print('Debes cargar los datos antes de trabajar con ellos')
-        else:
-            if subMenu() == 1:
-            elif subMenu() == 2:
-            elif subMenu() == 3:
-            elif subMenu() == 4:
-    elif Menu() == 3:
-    elif Menu() == 4:
+    elif Menu == 2:
+        while datosArchivos == []:
+            datosArchivos = validacion(datosArchivos)
+        subMenu = subMenu()
+        while subMenu != 1 and subMenu != 2 and subMenu != 3 and subMenu != 4:
+            print('El numero ingresado no corresponde a ninguna de las opciones')
+            subMenu =subMenu()
+        if subMenu == 1:
+        elif subMenu == 2:
+        elif subMenu == 3:            
+        elif su Menu == 4:
+    elif Menu == 3:
+        if datosArchivos == []
+            datosArchivos = validacion(datosArchivos)
+    elif Menu == 4:
+
        
         
 
