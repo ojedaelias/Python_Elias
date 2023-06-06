@@ -47,7 +47,7 @@ def Menu():
     return x
     
 #-----------Submenu-----------#
-def su subMenu():
+def subMenu():
     x = int(input('''Seleccione la opcion que desee realizar:
     1. Generar el archivo semestre1.csv que contenga los datos de locales en venta de los trimestres 
     PRIMER y SEGUNDO
