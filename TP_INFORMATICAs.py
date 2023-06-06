@@ -39,9 +39,13 @@ def cargarArchivo():
         columnas = i
     
     matriz = matrizNula(len(datosMatriz),columnas)  
+    
     cargarMatriz(matriz, datosMatriz)
+    
     return matriz,columnas
-matriz,columnas = cargarArchivo()
+
+
+
 
 #-----------Menu-----------#
 def Menu():
@@ -74,35 +78,39 @@ def agregarRegistros(M,C):                                            # Agrega r
     for i in range(columnas):
         col = matriz[0][i]    
         datos.append(input("Ingrese el dato "+col+": "))
-    print(datos)
+    #print(datos)
     #cargarMatriz(M,datos)
         #print(M)
                         
     for j in range(len(M[0])):
         M[0].append(datos[j])
-    print(M)
+    #print(M)
+    return datos
+
+matriz,columnas = cargarArchivo()
 agregarRegistros(matriz,columnas)
+#mostrarMatriz(matriz)
+
 
 #-------------------------------Programa principal-------------------------------#
-print('este es el menu')
-print('Git hub es una verga')
-while Menu() != 5: 
-    if Menu() == 1:
-        cargarArchivo()
-    elif Menu() == 2:
-        if datosArchivos == []:
-            print('Debes cargar los datos antes de trabajar con ellos')
-        else:
-            if subMenu() == 1:
-            elif subMenu() == 2:
-            elif subMenu() == 3:
-            elif subMenu() == 4:
-    elif Menu() == 3:
-    elif Menu() == 4:
+
+#while Menu() != 5: 
+    #if Menu() == 1:
+     #   cargarArchivo()
+    #elif Menu() == 2:
+        #if datosArchivos == []:
+        #    print('Debes cargar los datos antes de trabajar con ellos')
+       # else:
+      #      if subMenu() == 1:
+     #       elif subMenu() == 2:
+    #        elif subMenu() == 3:
+   #         elif subMenu() == 4:
+  #  elif Menu() == 3:
+ #   elif Menu() == 4:
        
         
 
-cargarArchivo()      #cargar archivos punto 1
+#cargarArchivo()      #cargar archivos punto 1
 
 
 
