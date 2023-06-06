@@ -26,7 +26,8 @@ def mostrarMatriz(M):                              # Muestra la matriz "M" en la
 def cargarArchivo():                                    
     datosMatriz = []                                                              
     try:
-        with open("locales-en-venta-2020.csv", 'r', encoding='utf-8') as archivo:          # Abre el archivo y lo llama "archivo", lo lee 
+        #with open("locales-en-venta-2020.csv", 'r', encoding='utf-8') as archivo:          # Abre el archivo y lo llama "archivo", lo lee 
+        with open("test.csv","r",encoding = 'utf-8') as archivo:
             lector = csv.reader(archivo)                                                   # y guarda lo leido en la variable "lector"
             for fila in lector:                               
                 datosMatriz.append(fila)                                                 # Recorre al archivo guardado en lector y
@@ -41,6 +42,7 @@ def cargarArchivo():
     cargarMatriz(matriz, datosMatriz)
     return matriz,columnas
 matriz,columnas = cargarArchivo()
+
 #-----------Menu-----------#
 def Menu():
     x = int(input('''Seleccione la opcion que desee realizar:
