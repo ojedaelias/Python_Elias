@@ -2,7 +2,6 @@
 import csv
 
 from random import *
-print("algo de prueba")
 #-------------------------------Definicion de funciones-------------------------------#
 #-----------Matriz-----------#    
 def matrizNula(m,n):                                    # Crea una matriz con valor None de longitud m*n
@@ -35,7 +34,6 @@ def cargarArchivo():
     cargarMatriz(matriz, datosArchivos)                                                # del archivo
 
     return matriz
-print("pruebapruebapruebapruebapruebapruebapruebaprueba")
 #-----------Menu-----------#
 def Menu():
     x = int(input('''Seleccione la opcion que desee realizar:
