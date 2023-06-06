@@ -19,7 +19,7 @@ def mostrarMatriz(M):                              # Muestra la matriz "M" en la
 	for i in range(len(M)):
 		print("\n")
 		for j in range(len(M[0])):
-			print(M[i][j], end = "\t")
+			print(M[i][j], end = " "*5)
 
 
 #Abrir archivo como matriz
@@ -27,7 +27,7 @@ def cargarArchivo():
     datosMatriz = []
     try:
         #with open("locales-en-venta-2020.csv", 'r',encoding = 'utf-8') as archivo:
-        with open("locales-en-venta-2020.csv", 'r',encoding = 'utf-8') as archivo:      
+        with open("test.csv", 'r',encoding = 'utf-8') as archivo:      
             lector = csv.reader(archivo)                    
             for fila in lector:                               
                 datosMatriz.append(fila)
@@ -40,6 +40,7 @@ def cargarArchivo():
     
     matriz = matrizNula(len(datosMatriz),columnas)  
     cargarMatriz(matriz, datosMatriz)
+    
     return matriz,columnas                                              # del archivo
 
     return matriz
@@ -81,7 +82,7 @@ def validacion(x):
 #-----------Agregar datos-----------#
 def agregarRegistros(M,C):                                            # Agrega registros a la amtriz "M"
     datos = []
-    for i in range(columnas):
+    for i in range(C):
         col = matriz[0][i]    
         datos.append(input("Ingrese el dato "+col+": "))
     #print(datos)
@@ -89,39 +90,41 @@ def agregarRegistros(M,C):                                            # Agrega r
         #print(M)
                         
     for j in range(len(M[0])):
-        M[0].append(datos[j])
+        M[0].append(datos[j]) #LO ESTA GUARDANDO EN LA PRIMER COLUMNA DE LA MATRIZ. CORREGIR
     #print(M)
     return datos
 
 matriz,columnas = cargarArchivo()
+#print(columnas,type(columnas))
+print(matriz,"\n",matriz[0])
 #agregarRegistros(matriz,columnas)
 mostrarMatriz(matriz)
 
 
 
 #-------------------------------Programa principal-------------------------------#
-Menu = Menu()
-while Menu != 1 and Menu != 2 and Menu != 3 and Menu != 4 and Menu != 5:
-    print('El numero ingresado no corresponde a ninguna de las opciones')
-    Menu = Menu()
-while Menu != 5: 
-    if Menu == 1:
-        cargarArchivo()
-    elif Menu == 2:
-        while datosArchivos == []:
-            datosArchivos = validacion(datosArchivos)
-        subMenu = subMenu()
-        while subMenu != 1 and subMenu != 2 and subMenu != 3 and subMenu != 4:
-            print('El numero ingresado no corresponde a ninguna de las opciones')
-            subMenu =subMenu()
-        if subMenu == 1:
-        elif subMenu == 2:
-        elif subMenu == 3:            
-        elif su Menu == 4:
-    elif Menu == 3:
-        if datosArchivos == []
-            datosArchivos = validacion(datosArchivos)
-    elif Menu == 4:
+#Menu = Menu()
+#while Menu != 1 and Menu != 2 and Menu != 3 and Menu != 4 and Menu != 5:
+#    print('El numero ingresado no corresponde a ninguna de las opciones')
+#    Menu = Menu()
+#while Menu != 5: 
+#    if Menu == 1:
+#        cargarArchivo()
+#    elif Menu == 2:
+#        while datosArchivos == []:
+#            datosArchivos = validacion(datosArchivos)
+#        subMenu = subMenu()
+#        while subMenu != 1 and subMenu != 2 and subMenu != 3 and subMenu != 4:
+#            print('El numero ingresado no corresponde a ninguna de las opciones')
+#            subMenu =subMenu()
+#        if subMenu == 1:
+#        elif subMenu == 2:
+#        elif subMenu == 3:            
+#        elif su Menu == 4:
+#    elif Menu == 3:
+#        if datosArchivos == []
+#            datosArchivos = validacion(datosArchivos)
+#    elif Menu == 4:
 
        
         
