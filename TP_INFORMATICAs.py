@@ -2,6 +2,10 @@
 import csv
 
 from random import *
+
+print("***************************************")
+print("***************************************")
+print("***************************************")
 #-------------------------------Definicion de funciones-------------------------------#
 #-----------Matriz-----------#    
 def matrizNula(m,n):                                    # Crea una matriz con valor None de longitud m*n
