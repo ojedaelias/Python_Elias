@@ -23,15 +23,24 @@ def mostrarMatriz(M):                              # Muestra la matriz "M" en la
 
 
 #Abrir archivo como matriz
-def cargarArchivo():                                    
-    datosArchivos = []                                                              
-    with open("locales-en-venta-2020.csv", 'r', encoding='utf-8') as archivo:          # Abre el archivo y lo llama "archivo", lo lee 
-        lector = csv.reader(archivo)                                                   # y guarda lo leido en la variable "lector"
-        for fila in lector:                               
-            datosArchivos.append(fila)                                                 # Recorre al archivo guardado en lector y
-    print(len(datosArchivos)) #VER COMO CALCULAR LAS COLUMNAS Y FILAS                  # lo almacena en la lista "datosArchivos"
-    matriz = matrizNula(len(datosArchivos), 11)                                        # Crea una matriz "vacia" de la longitud 
-    cargarMatriz(matriz, datosArchivos)                                                # del archivo
+def cargarArchivo():
+    datosMatriz = []
+    try:
+        #with open("locales-en-venta-2020.csv", 'r',encoding = 'utf-8') as archivo:
+        with open("locales-en-venta-2020.csv", 'r',encoding = 'utf-8') as archivo:      
+            lector = csv.reader(archivo)                    
+            for fila in lector:                               
+                datosMatriz.append(fila)
+    except EOFError:
+        print("No se pudo abrir el archivo correctamente")
+    
+    columnas = None
+    for i in range(len(datosMatriz[0])+1):
+        columnas = i
+    
+    matriz = matrizNula(len(datosMatriz),columnas)  
+    cargarMatriz(matriz, datosMatriz)
+    return matriz,columnas                                              # del archivo
 
     return matriz
 #-----------Menu-----------#
@@ -47,7 +56,7 @@ def Menu():
     return x
     
 #-----------Submenu-----------#
-def su subMenu():
+def subMenu():
     x = int(input('''Seleccione la opcion que desee realizar:
     1. Generar el archivo semestre1.csv que contenga los datos de locales en venta de los trimestres 
     PRIMER y SEGUNDO
