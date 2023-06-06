@@ -2,11 +2,6 @@
 import csv
 
 from random import *
-
-asdasfasf
-pruebapruebapruebaprueba
-
-*****
 #-------------------------------Definicion de funciones-------------------------------#
 #-----------Matriz-----------#    
 def matrizNula(m,n):                                    # Crea una matriz con valor None de longitud m*n
@@ -73,7 +68,7 @@ def agregarRegistros():
 
 
 #-------------------------------Programa principal-------------------------------#
-while M enu() != 5: 
+while Menu() != 5: 
     if Menu() == 1:
         cargarArchivo()
     elif Menu() == 2:
