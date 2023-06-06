@@ -82,7 +82,7 @@ agregarRegistros(matriz,columnas)
 #mostrarMatriz(matriz)
 
 
-print("este no es el programa principal")
+
 #-------------------------------Programa principal-------------------------------#
 print('este es el menu')
 print('Git hub es una verga una recontra verga')
