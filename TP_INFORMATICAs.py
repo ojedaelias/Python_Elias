@@ -2,6 +2,10 @@
 import csv
 
 from random import *
+
+elias 
+
+
 #-------------------------------Definicion de funciones-------------------------------#
 #-----------Matriz-----------#    
 def matrizNula(m,n):                                    # Crea una matriz con valor None de longitud m*n
@@ -87,8 +91,7 @@ while Menu() != 5:
 
 cargarArchivo()      #cargar archivos punto 1
 
-cargarArchivo()
-assert
+
 
 
 
