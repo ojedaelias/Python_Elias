@@ -2,6 +2,7 @@
 import csv
 
 from random import *
+print("algo de prueba")
 #-------------------------------Definicion de funciones-------------------------------#
 #-----------Matriz-----------#    
 def matrizNula(m,n):                                    # Crea una matriz con valor None de longitud m*n
@@ -69,7 +70,7 @@ def agregarRegistros():
 
 
 #-------------------------------Programa principal-------------------------------#
-while Menu() != 5: 
+while M enu() != 5: 
     if Menu() == 1:
         cargarArchivo()
     elif Menu() == 2:
