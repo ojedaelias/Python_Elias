@@ -2,10 +2,6 @@
 import csv
 
 from random import *
-
-print("***************************************")
-print("***************************************")
-print("***************************************")
 #-------------------------------Definicion de funciones-------------------------------#
 #-----------Matriz-----------#    
 def matrizNula(m,n):                                    # Crea una matriz con valor None de longitud m*n
@@ -28,16 +24,23 @@ def mostrarMatriz(M):                              # Muestra la matriz "M" en la
 
 #Abrir archivo como matriz
 def cargarArchivo():                                    
-    datosArchivos = []                                                              
-    with open("locales-en-venta-2020.csv", 'r', encoding='utf-8') as archivo:          # Abre el archivo y lo llama "archivo", lo lee 
-        lector = csv.reader(archivo)                                                   # y guarda lo leido en la variable "lector"
-        for fila in lector:                               
-            datosArchivos.append(fila)                                                 # Recorre al archivo guardado en lector y
-    print(len(datosArchivos)) #VER COMO CALCULAR LAS COLUMNAS Y FILAS                  # lo almacena en la lista "datosArchivos"
-    matriz = matrizNula(len(datosArchivos), 11)                                        # Crea una matriz "vacia" de la longitud 
-    cargarMatriz(matriz, datosArchivos)                                                # del archivo
-
-    return matriz
+    datosMatriz = []                                                              
+    try:
+        with open("locales-en-venta-2020.csv", 'r', encoding='utf-8') as archivo:          # Abre el archivo y lo llama "archivo", lo lee 
+            lector = csv.reader(archivo)                                                   # y guarda lo leido en la variable "lector"
+            for fila in lector:                               
+                datosMatriz.append(fila)                                                 # Recorre al archivo guardado en lector y
+    except EOFError:
+        print("No se pudo abrir el archivo correctamente")
+        
+    columnas = None
+    for i in range(len(datosMatriz[0])+1):
+        columnas = i
+    
+    matriz = matrizNula(len(datosMatriz),columnas)  
+    cargarMatriz(matriz, datosMatriz)
+    return matriz,columnas
+matriz,columnas = cargarArchivo()
 #-----------Menu-----------#
 def Menu():
     x = int(input('''Seleccione la opcion que desee realizar:
@@ -63,18 +66,22 @@ def subMenu():
     Ingrese el numero de la opcion que quiera seleccionar'''))
     return x
 
-
-
-
 #-----------Agregar datos-----------#
-def agregarRegistros():
-      
+def agregarRegistros(M,C):                                            # Agrega registros a la amtriz "M"
+    datos = []
+    for i in range(columnas):
+        col = matriz[0][i]    
+        datos.append(input("Ingrese el dato "+col+": "))
+    print(datos)
+    #cargarMatriz(M,datos)
+        #print(M)
+                        
+    for j in range(len(M[0])):
+        M[0].append(datos[j])
+    print(M)
+agregarRegistros(matriz,columnas)
 
-
-print("este no es el programa principal")
 #-------------------------------Programa principal-------------------------------#
-print('este es el menu')
-print('Git hub es una verga')
 while Menu() != 5: 
     if Menu() == 1:
         cargarArchivo()
