@@ -24,29 +24,16 @@ def mostrarMatriz(M):                              # Muestra la matriz "M" en la
 
 #Abrir archivo como matriz
 def cargarArchivo():                                    
-    datosMatriz = []                                                              
-    try:
-        #with open("locales-en-venta-2020.csv", 'r', encoding='utf-8') as archivo:          # Abre el archivo y lo llama "archivo", lo lee 
-        with open("test.csv","r",encoding = 'utf-8') as archivo:
-            lector = csv.reader(archivo)                                                   # y guarda lo leido en la variable "lector"
-            for fila in lector:                               
-                datosMatriz.append(fila)                                                 # Recorre al archivo guardado en lector y
-    except EOFError:
-        print("No se pudo abrir el archivo correctamente")
-        
-    columnas = None
-    for i in range(len(datosMatriz[0])+1):
-        columnas = i
-    
-    matriz = matrizNula(len(datosMatriz),columnas)  
-    
-    cargarMatriz(matriz, datosMatriz)
-    
-    return matriz,columnas
+    datosArchivos = []                                                              
+    with open("locales-en-venta-2020.csv", 'r', encoding='utf-8') as archivo:          # Abre el archivo y lo llama "archivo", lo lee 
+        lector = csv.reader(archivo)                                                   # y guarda lo leido en la variable "lector"
+        for fila in lector:                               
+            datosArchivos.append(fila)                                                 # Recorre al archivo guardado en lector y
+    print(len(datosArchivos)) #VER COMO CALCULAR LAS COLUMNAS Y FILAS                  # lo almacena en la lista "datosArchivos"
+    matriz = matrizNula(len(datosArchivos), 11)                                        # Crea una matriz "vacia" de la longitud 
+    cargarMatriz(matriz, datosArchivos)                                                # del archivo
 
-
-
-
+    return matriz
 #-----------Menu-----------#
 def Menu():
     x = int(input('''Seleccione la opcion que desee realizar:
@@ -60,7 +47,7 @@ def Menu():
     return x
     
 #-----------Submenu-----------#
-def subMenu():
+def su subMenu():
     x = int(input('''Seleccione la opcion que desee realizar:
     1. Generar el archivo semestre1.csv que contenga los datos de locales en venta de los trimestres 
     PRIMER y SEGUNDO
@@ -70,6 +57,16 @@ def subMenu():
     4. Generar un archivo con el promedio de superficies de locales con más de 10 años de 
     antigüedad
     Ingrese el numero de la opcion que quiera seleccionar'''))
+    return x
+
+
+#--------------Validacion que este cargada la matriz antes de trabajarla----------------#
+def validacion(x):
+    while x == []:
+            print('Debes cargar los datos antes de trabajar con ellos')
+            Menu = Menu()
+            if Menu == 1:
+                x = cargarArchivo()
     return x
 
 #-----------Agregar datos-----------#
@@ -92,21 +89,31 @@ matriz,columnas = cargarArchivo()
 mostrarMatriz(matriz)
 
 
-#-------------------------------Programa principal-------------------------------#
 
-#while Menu() != 5: 
-    #if Menu() == 1:
-     #   cargarArchivo()
-    #elif Menu() == 2:
-        #if datosArchivos == []:
-        #    print('Debes cargar los datos antes de trabajar con ellos')
-       # else:
-      #      if subMenu() == 1:
-     #       elif subMenu() == 2:
-    #        elif subMenu() == 3:
-   #         elif subMenu() == 4:
-  #  elif Menu() == 3:
- #   elif Menu() == 4:
+#-------------------------------Programa principal-------------------------------#
+Menu = Menu()
+while Menu != 1 and Menu != 2 and Menu != 3 and Menu != 4 and Menu != 5:
+    print('El numero ingresado no corresponde a ninguna de las opciones')
+    Menu = Menu()
+while Menu != 5: 
+    if Menu == 1:
+        cargarArchivo()
+    elif Menu == 2:
+        while datosArchivos == []:
+            datosArchivos = validacion(datosArchivos)
+        subMenu = subMenu()
+        while subMenu != 1 and subMenu != 2 and subMenu != 3 and subMenu != 4:
+            print('El numero ingresado no corresponde a ninguna de las opciones')
+            subMenu =subMenu()
+        if subMenu == 1:
+        elif subMenu == 2:
+        elif subMenu == 3:            
+        elif su Menu == 4:
+    elif Menu == 3:
+        if datosArchivos == []
+            datosArchivos = validacion(datosArchivos)
+    elif Menu == 4:
+
        
         
 
