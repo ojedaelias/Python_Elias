@@ -34,7 +34,7 @@ def cargarArchivo():
     cargarMatriz(matriz, datosArchivos)                                                # del archivo
 
     return matriz
-
+print("pruebapruebapruebapruebapruebapruebapruebaprueba")
 #-----------Menu-----------#
 def Menu():
     x = int(input('''Seleccione la opcion que desee realizar:
