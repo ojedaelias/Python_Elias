@@ -74,6 +74,7 @@ def agregarRegistros():
 print("este no es el programa principal")
 #-------------------------------Programa principal-------------------------------#
 print('este es el menu')
+print('Git hub es una verga')
 while Menu() != 5: 
     if Menu() == 1:
         cargarArchivo()
