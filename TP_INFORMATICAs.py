@@ -88,6 +88,7 @@ while Menu() != 5:
 cargarArchivo()      #cargar archivos punto 1
 
 cargarArchivo()
+assert
 
 
 
