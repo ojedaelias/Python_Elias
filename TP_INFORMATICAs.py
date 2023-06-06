@@ -71,7 +71,7 @@ def agregarRegistros():
       
 
 
-
+print("este no es el programa principal")
 #-------------------------------Programa principal-------------------------------#
 print('este es el menu')
 while Menu() != 5: 
