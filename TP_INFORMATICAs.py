@@ -1,9 +1,9 @@
-#-------------------------------Definir librerias-------------------------------------#
+#-------------------------------Definicion de librerias-------------------------------------#
 import csv
 
 from random import *
 #-------------------------------Definicion de funciones-------------------------------#
-#-----------Matriz-----------#    
+ 
 def matrizNula(m,n):                                    # Crea una matriz con valor None de longitud m*n
 	matriz = [None] * m                                 # Define una lista matriz con n COLUMNAS
 	for i in range(m):                                  # Recorre la lista y en cada columna almacena n FILAS
@@ -21,8 +21,6 @@ def mostrarMatriz(M):                              # Muestra la matriz "M" en la
 		for j in range(len(M[0])):
 			print(M[i][j], end = " "*5)
 
-
-#Abrir archivo como matriz
 def cargarArchivo():
     datosMatriz = []
     try:
@@ -44,7 +42,7 @@ def cargarArchivo():
     return matriz,columnas                                              # del archivo
 
     return matriz
-#-----------Menu-----------#
+
 def Menu():
     x = int(input('''Seleccione la opcion que desee realizar:
     1. Cargar los datos del archivo "locales-en-venta-2020.csv"
@@ -56,7 +54,6 @@ def Menu():
     Ingrese el numero de la opcion que quiera seleccionar'''))
     return x
     
-#-----------Submenu-----------#
 def subMenu():
     x = int(input('''Seleccione la opcion que desee realizar:
     1. Generar el archivo semestre1.csv que contenga los datos de locales en venta de los trimestres 
@@ -69,8 +66,6 @@ def subMenu():
     Ingrese el numero de la opcion que quiera seleccionar'''))
     return x
 
-
-#--------------Validacion que este cargada la matriz antes de trabajarla----------------#
 def validacion(x):
     while x == []:
             print('Debes cargar los datos antes de trabajar con ellos')
@@ -79,7 +74,6 @@ def validacion(x):
                 x = cargarArchivo()
     return x
 
-#-----------Agregar datos-----------#
 def agregarRegistros(M,C):                                            # Agrega registros a la amtriz "M"
     datos = []
     for i in range(C):
@@ -111,8 +105,8 @@ while Menu != 5:
     if Menu == 1:
         cargarArchivo()
     elif Menu == 2:
-        while datosArchivos == []:
-            datosArchivos = validacion(datosArchivos)
+        while matriz == []:
+            matriz = validacion(matriz)
         subMenu = subMenu()
         while subMenu != 1 and subMenu != 2 and subMenu != 3 and subMenu != 4:
             print('El numero ingresado no corresponde a ninguna de las opciones')
@@ -122,14 +116,14 @@ while Menu != 5:
         elif subMenu == 3:            
         elif su Menu == 4:
     elif Menu == 3:
-        if datosArchivos == []
-            datosArchivos = validacion(datosArchivos)
+        if matriz == []
+            matriz = validacion(matriz)
     elif Menu == 4:
 
        
         
 
-#cargarArchivo()      #cargar archivos punto 1
+
 
 
 
